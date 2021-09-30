@@ -1,0 +1,18 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+}
+
+dependencies {
+    implementation project(path: ':domain')
+    // Teste unitário
+    testImplementation 'junit:junit:4.13.2'
+
+    implementation "io.reactivex.rxjava3:rxkotlin:$rx_java_version"
+    implementation "io.insert-koin:koin-core:$koin_version"
+}
