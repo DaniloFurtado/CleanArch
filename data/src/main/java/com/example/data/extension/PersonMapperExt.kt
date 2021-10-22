@@ -1,4 +1,4 @@
-package com.example.data.mapper
+package com.example.data.extension
 
 import com.example.data.payload.PersonPayLoad
 import com.example.domain.model.Person

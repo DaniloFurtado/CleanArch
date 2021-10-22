@@ -1,6 +1,6 @@
 package com.example.data.repository
 
-import com.example.data.mapper.convertToModel
+import com.example.data.extension.convertToModel
 import com.example.data.remote.RemoteAPi
 import com.example.domain.model.Person
 import com.example.domain.repository.PersonRepository

@@ -1,6 +1,7 @@
 package com.example.cleanarch
 
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.OnLifecycleEvent
 import com.example.cleanarch.base.BaseViewModel
@@ -11,9 +12,9 @@ class PersonViewModel(
     private val listUserUseCase: ListUserUseCase
 ) : BaseViewModel(listUserUseCase) {
     private val _liveDataLisUsers = MutableLiveData<List<Person>>()
-    val liveDataListUsers = _liveDataLisUsers
+    val liveDataListUsers: LiveData<List<Person>> = _liveDataLisUsers
     private val _loading = MutableLiveData<Boolean>()
-    val loading = _loading
+    val loading: LiveData<Boolean> = _loading
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun onInitViewModel() {
@@ -29,14 +30,15 @@ class PersonViewModel(
                 },
                 onError = (::onHandleError),
                 onStartLoad = {
-                    loading.value = true
+                    _loading.postValue(true)
                 },
                 onFinishLoad = {
-                    loading.value = false
+                    _loading.postValue(false)
                 }
             )
     }
 
     private fun onHandleError(throwable: Throwable) {
+        actionErrorModel.postValue(throwable)
     }
 }
