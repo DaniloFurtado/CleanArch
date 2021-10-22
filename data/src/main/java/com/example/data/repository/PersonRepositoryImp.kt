@@ -1,5 +1,6 @@
 package com.example.data.repository
 
+import com.example.data.mapper.convertToModel
 import com.example.data.remote.RemoteAPi
 import com.example.domain.model.Person
 import com.example.domain.repository.PersonRepository
@@ -13,12 +14,7 @@ class PersonRepositoryImp(
         api.listPerson()
             .map { list ->
                 list.map { person ->
-                    Person(
-                        person.firstName,
-                        person.secondName,
-                        person.urlPhoto,
-                        person.city
-                    )
+                    person.convertToModel()
                 }
             }
             .delay(1500, TimeUnit.MILLISECONDS)

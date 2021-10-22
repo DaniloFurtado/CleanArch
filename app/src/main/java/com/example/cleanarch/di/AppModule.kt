@@ -9,7 +9,7 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val appModule = module {
-    single<BaseSchedulerProvider> { BaseSchedulerProviderImp() }
+    factory<BaseSchedulerProvider> { BaseSchedulerProviderImp() }
 
     single<RemoteAPi> { ApiRemoteImp() }
     viewModel { PersonViewModel(get()) }

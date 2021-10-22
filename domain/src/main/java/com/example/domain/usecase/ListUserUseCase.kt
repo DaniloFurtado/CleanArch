@@ -4,7 +4,6 @@ import com.example.domain.base.SingleUseCase
 import com.example.domain.executor.BaseSchedulerProvider
 import com.example.domain.model.Person
 import com.example.domain.repository.PersonRepository
-import io.reactivex.rxjava3.core.Single
 
 class ListUserUseCase(
     private val repository: PersonRepository,

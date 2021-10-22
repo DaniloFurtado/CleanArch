@@ -1,6 +1,8 @@
 package com.example.cleanarch
 
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.OnLifecycleEvent
 import com.example.cleanarch.base.BaseViewModel
 import com.example.domain.model.Person
 import com.example.domain.usecase.ListUserUseCase
@@ -12,6 +14,11 @@ class PersonViewModel(
     val liveDataListUsers = _liveDataLisUsers
     private val _loading = MutableLiveData<Boolean>()
     val loading = _loading
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
+    fun onInitViewModel() {
+        requestListPerson()
+    }
 
     fun requestListPerson() {
         listUserUseCase
