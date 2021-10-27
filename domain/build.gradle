@@ -9,10 +9,14 @@ java {
 }
 
 dependencies {
-    // Teste unitário
-    testImplementation 'junit:junit:4.13.2'
 
     implementation "io.reactivex.rxjava3:rxkotlin:$rx_java_version"
     implementation "io.insert-koin:koin-core:$koin_version"
+
+    // Unit test
+    testImplementation "junit:junit:$junit_version"
+    testImplementation "org.mockito:mockito-core:$mockito_core_version"
+    testImplementation "io.mockk:mockk:$io_mockk_version"
+    testImplementation "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
 
 }
