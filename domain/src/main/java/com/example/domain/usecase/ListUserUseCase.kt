@@ -5,7 +5,7 @@ import com.example.domain.executor.BaseSchedulerProvider
 import com.example.domain.model.Person
 import com.example.domain.repository.PersonRepository
 
-class ListUserUseCase(
+open class ListUserUseCase(
     private val repository: PersonRepository,
     scheduler: BaseSchedulerProvider
 ) : SingleUseCase<List<Person>, Unit>(scheduler) {

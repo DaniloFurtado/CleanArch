@@ -21,20 +21,14 @@ class PersonViewModel(
         requestListPerson()
     }
 
-    fun requestListPerson() {
+    private fun requestListPerson() {
         listUserUseCase
             .execute(
                 params = null,
-                onResult = {
-                    _liveDataLisUsers.postValue(it)
-                },
+                onResult = { _liveDataLisUsers.postValue(it) },
                 onError = (::onHandleError),
-                onStartLoad = {
-                    _loading.postValue(true)
-                },
-                onFinishLoad = {
-                    _loading.postValue(false)
-                }
+                onStartLoad = { _loading.postValue(true) },
+                onFinishLoad = { _loading.postValue(false) }
             )
     }
 
