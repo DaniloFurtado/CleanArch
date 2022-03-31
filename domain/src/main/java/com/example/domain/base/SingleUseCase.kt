@@ -6,7 +6,7 @@ import io.reactivex.rxjava3.core.Single
 abstract class SingleUseCase<T, in Params> constructor(
     private val schedulerProvider: BaseSchedulerProvider
 ) : UseCase() {
-    abstract fun buildUseCaseSingle(params: Params? = null): Single<T>
+    protected abstract fun buildUseCaseSingle(params: Params? = null): Single<T>
 
     open fun execute(
         params: Params? = null,
