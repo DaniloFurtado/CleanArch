@@ -11,7 +11,7 @@
         android:name=".application.ApplicationApp"
         android:theme="@style/Theme.CleanArch">
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.home.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

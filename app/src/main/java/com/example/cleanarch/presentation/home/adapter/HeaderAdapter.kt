@@ -1,15 +1,14 @@
-package com.example.cleanarch
+package com.example.cleanarch.presentation.home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cleanarch.databinding.ItemListHeaderBinding
-import com.example.cleanarch.databinding.ItemListPersonBinding
-import com.example.domain.model.Person
+import com.example.cleanarch.presentation.home.adapter.HeaderAdapter.MyHolder
 
 class HeaderAdapter(
     private val title: String
-) : RecyclerView.Adapter<HeaderAdapter.MyHolder>() {
+) : RecyclerView.Adapter<MyHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
         return MyHolder(ItemListHeaderBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }

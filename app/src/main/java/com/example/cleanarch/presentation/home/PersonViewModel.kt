@@ -1,4 +1,4 @@
-package com.example.cleanarch
+package com.example.cleanarch.presentation.home
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LiveData

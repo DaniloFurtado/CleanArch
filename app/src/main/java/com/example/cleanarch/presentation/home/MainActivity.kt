@@ -1,10 +1,11 @@
-package com.example.cleanarch
+package com.example.cleanarch.presentation.home
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isGone
 import com.example.cleanarch.databinding.ActivityMainBinding
+import com.example.cleanarch.presentation.home.adapter.ListPersonAdapter
 import com.example.domain.model.Person
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

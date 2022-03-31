@@ -1,15 +1,16 @@
-package com.example.cleanarch
+package com.example.cleanarch.presentation.home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cleanarch.databinding.ItemListPersonBinding
+import com.example.cleanarch.presentation.home.adapter.ListPersonAdapter.MyHolder
 import com.example.domain.model.Person
 
 class ListPersonAdapter(
     private val listItems: List<Person>,
     private val onClickItem: (Person, Int) -> Unit
-) : RecyclerView.Adapter<ListPersonAdapter.MyHolder>() {
+) : RecyclerView.Adapter<MyHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
         return MyHolder(
             ItemListPersonBinding

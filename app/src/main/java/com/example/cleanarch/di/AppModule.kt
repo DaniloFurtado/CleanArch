@@ -1,6 +1,6 @@
 package com.example.cleanarch.di
 
-import com.example.cleanarch.PersonViewModel
+import com.example.cleanarch.presentation.home.PersonViewModel
 import com.example.cleanarch.framework.BaseSchedulerProviderImp
 import com.example.cleanarch.framework.remote.ApiRemoteImp
 import com.example.data.remote.RemoteAPi
