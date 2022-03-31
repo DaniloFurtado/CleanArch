@@ -33,21 +33,21 @@ class MainActivity : AppCompatActivity() {
     private fun initListUserObserver() {
         viewModel
             .liveDataListUsers
-            .observe(this, { listPerson ->
+            .observe(this) { listPerson ->
                 binding.listItem.adapter = ListPersonAdapter(
                     listPerson,
                     ::onClickHandle
                 )
-            })
+            }
     }
 
     private fun initLoadingObserver() {
         viewModel
             .loading
-            .observe(this, { showDialog ->
+            .observe(this) { showDialog ->
                 binding.progress.isGone = showDialog.not()
                 binding.listItem.isGone = showDialog
-            })
+            }
     }
 
     private fun onClickHandle(person: Person, position: Int) {
