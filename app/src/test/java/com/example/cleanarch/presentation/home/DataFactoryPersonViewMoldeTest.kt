@@ -1,4 +1,4 @@
-package com.example.cleanarch
+package com.example.cleanarch.presentation.home
 
 import com.example.domain.model.Person
 
