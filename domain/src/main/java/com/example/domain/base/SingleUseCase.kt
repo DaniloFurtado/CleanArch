@@ -8,18 +8,18 @@ abstract class SingleUseCase<T, in Params> constructor(
 ) : UseCase() {
     protected abstract fun buildUseCaseSingle(params: Params? = null): Single<T>
 
-    open fun execute(
+    open operator fun invoke(
         params: Params? = null,
         onResult: (T) -> Unit,
         onError: (e: Throwable) -> Unit,
-        onStartLoad: (() -> Unit)? = null,
-        onFinishLoad: (() -> Unit)? = null
+        onStartProcess: (() -> Unit)? = null,
+        onFinishProcess: (() -> Unit)? = null
     ) {
         this.buildUseCaseSingle(params)
             .subscribeOn(schedulerProvider.executionThread())
             .observeOn(schedulerProvider.postThread())
-            .doOnSubscribe { onStartLoad?.invoke() }
-            .doOnEvent { _, _ -> onFinishLoad?.invoke() }
+            .doOnSubscribe { onStartProcess?.invoke() }
+            .doOnEvent { _, _ -> onFinishProcess?.invoke() }
             .subscribe({
                 onResult.invoke(it)
             }, {

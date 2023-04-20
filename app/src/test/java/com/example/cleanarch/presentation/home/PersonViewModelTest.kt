@@ -40,8 +40,7 @@ class PersonViewModelTest {
 
     private fun `given request list person exception`(throwable: Throwable) {
         every {
-            listUserUseCase
-                .execute(
+            listUserUseCase(
                     null,
                     any(),
                     capture(captorError),
@@ -88,8 +87,7 @@ class PersonViewModelTest {
 
     private fun `given request list person successful`() {
         every {
-            listUserUseCase
-                .execute(
+            listUserUseCase(
                     null,
                     capture(captorResultList),
                     any(),
@@ -119,8 +117,7 @@ class PersonViewModelTest {
 
     private fun `given request list person control load`(showLoad: Boolean) {
         every {
-            listUserUseCase
-                .execute(
+            listUserUseCase(
                     null,
                     any(),
                     any(),
@@ -147,8 +144,7 @@ class PersonViewModelTest {
 
     private fun `verify list execute once`() {
         verify(exactly = 1) {
-            listUserUseCase
-                .execute(null, any(), any(), any(), any())
+            listUserUseCase(null, any(), any(), any(), any())
         }
     }
 }
